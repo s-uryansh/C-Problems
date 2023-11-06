@@ -1,5 +1,6 @@
 #include<stdio.h>
-
+#define ROWS 3
+#define COLS 3
 int transpose(int *matrix , int rows , int cols){
     int temp;
     
@@ -28,23 +29,23 @@ int displayMatrix(int *matrix , int rows , int cols){
 
 int main(){
 
-    int matrix[3][3];
+    int matrix[ROWS][COLS];
 
     printf("Enter the elements for matrix: \n");
 
-    for(int i = 0; i < 3 ; i++){
-        for(int j = 0; j<3;j++){
+    for(int i = 0; i < ROWS ; i++){
+        for(int j = 0; j<COLS;j++){
             scanf("%d" , &matrix[i][j]);
         }
     }
 
     printf("Before transpose: \n\n");
-    displayMatrix((int*) matrix , 3 , 3);
+    displayMatrix((int*) matrix , ROWS , COLS);
 
-    transpose((int*) matrix , 3 , 3);
+    transpose((int*) matrix , ROWS , COLS);
 
     printf("After transpose: \n\n");
-    displayMatrix((int*) matrix , 3 , 3);
+    displayMatrix((int*) matrix , ROWS , COLS);
 
     return 0;
 
