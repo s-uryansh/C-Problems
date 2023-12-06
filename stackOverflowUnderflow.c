@@ -19,7 +19,7 @@ void pop(){
 void display(){
     printf("[");
     for(int i = 0 ; i < top ; i++){
-        printf("%d" , stack[i]);
+        printf(" %dgit" , stack[i]);
     }
     printf("]\n");
 }
@@ -35,27 +35,31 @@ int underflow(){
 
 int main(){
     char c;
-    printf("Stack size - %d\n A. Push | B. Pop | C. Display \n",stack_size);
+    printf("Stack size - %d\n A. Push | B. Pop | C. Display | D. Exit\n",stack_size);
 
     while(1){
         switch(c=getchar()){
           case 'A':
               if(overflow()){
-                  printf("OVERFLOWING");
+                  printf("OverFLOWING");
                   break;
               }
-              pop();
+              push();
               break;
 
           case 'B':
               if (underflow()){
-              printf("UNDERFLOWING");
+              printf("UnderFLOWING");
               break;
               }
-              push();
+              pop();
               break;
           case 'C':
              display();
+             break;
+          case 'D':
+             goto exit_loop;
+             break;
           case '\n' :
                 break;
 
@@ -66,5 +70,7 @@ int main(){
         
         }
     }
+    exit_loop: 
+        printf("\nExited\n");
 
 }
