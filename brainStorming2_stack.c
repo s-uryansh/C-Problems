@@ -19,7 +19,7 @@ void pop(){
 void display(){
     printf("[");
     for(int i = 0 ; i < top ; i++){
-        printf(" %dgit" , stack[i]);
+        printf(" %d" , stack[i]);
     }
     printf("]\n");
 }
